@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:notes/constant.dart';
 
 class CustomTextFeild extends StatelessWidget {
@@ -12,7 +10,7 @@ class CustomTextFeild extends StatelessWidget {
       cursorColor: KPrimaryColor,
       decoration: InputDecoration(
         hintText: 'title',
-        hintStyle: TextStyle(color: KPrimaryColor),
+        hintStyle: const TextStyle(color: KPrimaryColor),
         border: buildMethod(),
         enabledBorder: buildMethod(),
         focusedBorder: buildMethod(
