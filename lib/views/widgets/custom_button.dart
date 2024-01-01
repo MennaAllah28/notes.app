@@ -1,26 +1,33 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 import '../../constant.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key});
-
+  const CustomButton({
+    super.key,
+    this.onTap,
+  });
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          color: KPrimaryColor, borderRadius: BorderRadius.circular(16)),
-      width: MediaQuery.of(context).size.width,
-      height: 55,
-      child: const Center(
-          child: Text(
-        'Add',
-        style: TextStyle(
-          color: Colors.black,
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-        ),
-      )),
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+        decoration: BoxDecoration(
+            color: KPrimaryColor, borderRadius: BorderRadius.circular(16)),
+        width: MediaQuery.of(context).size.width,
+        height: 55,
+        child: const Center(
+            child: Text(
+          'Add',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        )),
+      ),
     );
   }
 }
