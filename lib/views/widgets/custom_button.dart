@@ -7,26 +7,38 @@ class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
     this.onTap,
+    this.isLoading = false,
   });
+  final bool isLoading;
+
   final void Function()? onTap;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
             color: KPrimaryColor, borderRadius: BorderRadius.circular(16)),
         width: MediaQuery.of(context).size.width,
         height: 55,
-        child: const Center(
-            child: Text(
-          'Add',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-        )),
+        child: Center(
+            child: isLoading
+                ? SizedBox(
+                    height: 24,
+                    width: 24,
+                    child: CircularProgressIndicator(
+                      color: Colors.black,
+                    ),
+                  )
+                : Text(
+                    'Add',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )),
       ),
     );
   }
